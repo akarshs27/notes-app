@@ -1,0 +1,13 @@
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$notes-app-primary: mat-palette($mat-indigo);
+$notes-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$notes-app-warn: mat-palette($mat-red);
+
+$notes-app-theme: mat-light-theme($notes-app-primary, $notes-app-accent, $notes-app-warn);
+
+@include angular-material-theme($notes-app-theme);
