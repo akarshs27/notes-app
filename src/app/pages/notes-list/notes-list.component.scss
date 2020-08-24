@@ -1,16 +1,15 @@
-
-
-
+.notes-list-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  margin: auto;
+}
 
 input {
   outline: none;
-  width: 25vw;
+  width: 22rem;
   border: 1px solid lightgrey;
-}
-
-.filter-box {
-  margin-top: 1rem;;
-  display: flex;
-  justify-items: center;
-  text-align: center;
+  padding: 5px 5px 5px 10px;
+  border-radius: 3px;
+  background-color: #f7f7f7;
 }

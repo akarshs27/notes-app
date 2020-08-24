@@ -1,0 +1,73 @@
+.note-card-container {
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 1.5px 2.5px 1.5px rgba($color: #000000, $alpha: 0.103);
+  transition: box-shadow 0.2s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 2.2px 5px 2.5px rgba($color: #000000, $alpha: 0.100);
+
+      .x-content {
+        opacity: 1;
+        transition-delay: 0.2s;
+        transform: scale(1);
+      }
+    }
+
+  .note-card-content{
+    padding: 1rem;
+
+    .note-card-title {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .note-card-body {
+      font-size: 0.8rem;
+      position: relative;
+      max-height: 5rem;
+      overflow: hidden;
+      color: #8a8a8a;
+
+      .fade-out-truncation {
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 47%;
+        background:linear-gradient(to bottom, rgba(white, 0), 0%, rgba(white, 0.8), 50%, white 100%);
+      }
+    }
+  }
+
+}
+
+.x-content {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color:#fff2f2;
+  background-image: url(../../../assets/cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 3px;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  opacity: 0;
+  transform: scale(0.3);
+
+  &:hover {
+    background-color:#ffe7e7;
+  }
+
+  &:active {
+    background-color: #ffdcdc;
+  }
+}
+
+p {
+  text-align: justify;
+}
