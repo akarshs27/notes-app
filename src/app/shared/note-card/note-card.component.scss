@@ -58,6 +58,7 @@
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   opacity: 0;
   transform: scale(0.3);
+  transform-origin: center;
 
   &:hover {
     background-color:#ffe7e7;
