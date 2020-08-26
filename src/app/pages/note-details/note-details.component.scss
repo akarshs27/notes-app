@@ -1,0 +1,21 @@
+.note-details-form {
+  max-width: 24rem;
+  margin: auto;
+
+  input, textarea {
+    background-color: #f7f7f7;
+
+      &.ng-touched.ng-invalid {
+        border-color: #ff6b6b;
+      }
+  }
+  button {
+    outline: none;
+    margin-left: 1rem;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

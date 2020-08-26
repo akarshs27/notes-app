@@ -1,0 +1,25 @@
+<div class="note-details-form mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="detailsForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label>Title</label>
+          <input class="form-control" type="text" formControlName="title" name="title"/>
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Body</label>
+          <textarea class="form-control" type="text" formControlName="body" name="title" rows="4"></textarea>
+        </div>
+
+        <div class="button-group">
+          <button mat-raised-button type="button">Clear</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!detailsForm.valid">Send</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
