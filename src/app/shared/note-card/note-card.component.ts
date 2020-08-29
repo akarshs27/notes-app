@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, Input, AfterViewInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -6,8 +6,14 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2, Input, AfterViewIn
   styleUrls: ['./note-card.component.scss']
 })
 export class NoteCardComponent implements AfterViewInit {
-  @Input() title: string;
-  @Input() body: string;
+  // @Input() title: string;
+  // @Input() body: string;
+  @Input() data: {
+    id: number,
+    title: string,
+    body: string
+  }
+  @Output() closeCard = new EventEmitter<void>();
   @ViewChild('truncator', {static: true}) truncator: ElementRef<HTMLElement>;
   @ViewChild('bodyText', {static: true}) bodyText: ElementRef<HTMLElement>;
 
@@ -29,6 +35,11 @@ export class NoteCardComponent implements AfterViewInit {
       //if there is no text overflow, hide the fade out truncator
       this.renderer.setStyle(this.truncator.nativeElement, 'display', 'none');
     }
+  }
+
+  close() {
+    this.closeCard.emit();
+    console.log("close card");
   }
 
 }
