@@ -21,7 +21,8 @@ export class NoteDetailsComponent implements OnInit {
 
   detailsForm = this.fb.group({
     'title' : [null,Validators.required],
-    'body' : [null, Validators.required]
+    'body' : [null, Validators.required],
+    'id' : [null]
   });
   ngOnInit() {
     this.route.params.subscribe(res => {
@@ -32,9 +33,9 @@ export class NoteDetailsComponent implements OnInit {
       if(id){
         console.log("Patching Value");
         this.detailsForm.patchValue({
-          title: 'this.title',
-          body: 'this.body',
-          id: 'this.id'
+          title: this.value.title,
+          body: this.value.body,
+          id: this.value.id
         });
       }
 
@@ -46,8 +47,7 @@ export class NoteDetailsComponent implements OnInit {
 
   onSubmit(){
     console.log(this.detailsForm.value);
-    console.log(this.detailsForm.value.id)
-    if(!this.detailsForm.value.id) {
+    if(this.detailsForm.get('id').value === null) {
       this.NotesService.add(this.detailsForm.value);
       this.router.navigate(['/']);
       console.log("Add Condition");
@@ -55,10 +55,8 @@ export class NoteDetailsComponent implements OnInit {
     else {
       console.log("Update condition");
      this.NotesService.update(this.detailsForm.value.id, this.detailsForm.value.title, this.detailsForm.value.body);
-
+      this.router.navigate(['/']);
     }
-    // this.NotesService.add(this.detailsForm.value);
-    // this.router.navigate(['/']);
   }
 
   onClear(){
