@@ -9,7 +9,10 @@
     </div>
   </div>
     <div class="note-card-list mt-3">
-       <app-note-card [data]="note" *ngFor="let note of noteStore" (closeCard)="deleteNote(note.id)">
+       <app-note-card
+        [data]="note"
+        *ngFor="let note of noteStore"
+        (closeCard)="deleteNote(note.id)">
        </app-note-card>
     </div>
 

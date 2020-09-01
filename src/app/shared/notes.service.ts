@@ -19,10 +19,6 @@ export class NotesService {
     return this.notes;
   }
 
-  getID(note: Notes){
-    return this.notes.indexOf(note);
-  }
-
   add(note: Notes){
     note.id = this.notes.length;
     this.notes.push(note);
