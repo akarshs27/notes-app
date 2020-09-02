@@ -5,13 +5,15 @@
         <input
         matInput
         type="text"
-        placeholder="Filter">
+        placeholder="Filter"
+        (keyup)="search($event)">
     </div>
   </div>
     <div class="note-card-list mt-3">
        <app-note-card
+       [@ItemAnim]
         [data]="note"
-        *ngFor="let note of noteStore"
+        *ngFor="let note of filteredStore"
         (closeCard)="deleteNote(note.id)">
        </app-note-card>
     </div>

@@ -6,32 +6,33 @@ import { Notes } from './notes';
 })
 export class NotesService {
 
-   notes : Notes[] = [
+   notes: Notes[] = [
     // {
     //   title : 'First',
     //   body : 'Body text of the first component',
     //   id : 1
     // },
    ];
-  constructor() { }
+  constructor() {
+   }
 
-  getAllNotes(){
+  getAllNotes() {
     return this.notes;
   }
 
-  add(note: Notes){
+  add(note: Notes) {
     note.id = this.notes.length;
     this.notes.push(note);
   }
 
-  update(id: number, title: string, body: string){
-     let note = this.notes[id];
+  update(id: number, title: string, body: string) {
+     const note = this.notes[id];
      note.title = title;
      note.body = body;
   }
 
   delete(id: number) {
-    return this.notes.splice(id,1);
+    return this.notes.splice(id, 1);
   }
 
 }
