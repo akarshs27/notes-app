@@ -20,8 +20,8 @@ export class NoteDetailsComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   detailsForm = this.fb.group({
-    'title' : [null,Validators.required],
-    'body' : [null, Validators.required],
+    'title' : [null, Validators.required],
+    'body' : [null],
     'id' : [null]
   });
   ngOnInit() {
